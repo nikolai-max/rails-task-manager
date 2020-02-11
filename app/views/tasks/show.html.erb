@@ -1,0 +1,13 @@
+<h1><%= @task.title %></h1>
+<p><%= @task.details %></p>
+
+
+<p></p><%= @task.completed? ? "💫 This task is completed": "💩 This task is not completed yet" %></p>
+
+<div class="btn btn-primary button"><%= link_to('Back to index', '/tasks') %></div>
+
+<div class="btn btn-info button"> <%= link_to 'Edit', edit_path %> </div>
+
+<div class="btn btn-warning button"><%= link_to "Delete", task_path(@task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></div>
