@@ -12,7 +12,8 @@ class TasksController < ApplicationController
   end
 
   def create
-    Task.new(title: params["task"]["title"], details: params["task"]["details"]).save
+    task = Task.new(task_params)
+    task.save
     redirect_to tasks_path
   end
 
